@@ -30,7 +30,7 @@
                 header('Location: ?error='.urlencode('Ocorreu um erro ao tentar realizar o cadastro!'));
             }
         } else {
-
+            header('Location: ?error='.urlencode('Preencha todos os dados!'));
         }
     }
 
