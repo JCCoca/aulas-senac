@@ -1,8 +1,6 @@
 <?php 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once '../connection/database.php';
-
     $cliente = $_POST['cliente'];
     $aparelho = $_POST['aparelho'];
     $problema = $_POST['problema'];
@@ -25,11 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $create->execute();
 
         if ($connection->lastInsertId() > 0) {
-            header('Location: ../views/pages/cadastrar_servico.php?success='.urlencode('Cadastro realizado com sucesso!'));
+            header('Location: ?vp=cadastrar_servico&success='.urlencode('Cadastro realizado com sucesso!'));
         } else {
-            header('Location: ../views/pages/cadastrar_servico.php?error='.urlencode('Ocorreu um erro ao tentar realizar o cadastro!'));
+            header('Location: ?vp=cadastrar_servico&error='.urlencode('Ocorreu um erro ao tentar realizar o cadastro!'));
         }
     } else {
-        header('Location: ../views/pages/cadastrar_servico.php?error='.urlencode('Preencha todos os dados!'));
+        header('Location: ?vp=cadastrar_servico&error='.urlencode('Preencha todos os dados!'));
     }
 }

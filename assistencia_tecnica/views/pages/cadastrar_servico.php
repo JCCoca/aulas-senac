@@ -1,11 +1,11 @@
-<?php include_once '../layouts/header.php'; ?>
+<?php include_once 'views/layouts/header.php'; ?>
 
 <h3 class="mb-4">Cadastrar Serviço</h3>
 
-<?php include_once '../components/alerts.php' ?>
+<?php include_once 'views/components/alerts.php' ?>
 
 <div class="card card-body">
-    <form action="../../actions/cadastrar_servico.php" method="POST">
+    <form action="?ac=cadastrar_servico" method="POST">
         <div class="mb-3">
             <label for="cliente" class="form-label">Cliente</label>
             <input type="text" name="cliente" id="cliente" class="form-control" required>
@@ -30,10 +30,10 @@
             Cadastrar
         </button>
 
-        <a href="servicos.php" class="btn btn-secondary">
+        <a href="?vp=servicos" class="btn btn-secondary">
             Voltar
         </a>
     </form>
 </div>
 
-<?php include_once '../layouts/footer.php'; ?>
+<?php include_once 'views/layouts/footer.php'; ?>

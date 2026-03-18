@@ -1,8 +1,6 @@
-<?php include_once '../layouts/header.php'; ?>
+<?php include_once 'views/layouts/header.php'; ?>
 
-<?php 
-
-    require_once '../../connection/database.php';
+<?php
 
     $id = (int) filter_var($_GET['id'], FILTER_SANITIZE_NUMBER_INT);
 
@@ -16,10 +14,10 @@
 
 <h3 class="mb-4">Editar Serviço</h3>
 
-<?php include_once '../components/alerts.php' ?>
+<?php include_once 'views/components/alerts.php' ?>
 
 <div class="card card-body">
-    <form action="<?= '../../actions/editar_servico.php?id='.$id ?>" method="POST">
+    <form action="<?= '?ac=editar_servico&id='.$id ?>" method="POST">
         <div class="mb-3">
             <label for="cliente" class="form-label">Cliente</label>
             <input type="text" name="cliente" id="cliente" class="form-control" value="<?= $servico->cliente ?>" required>
@@ -44,10 +42,10 @@
             Salvar
         </button>
 
-        <a href="servicos.php" class="btn btn-secondary">
+        <a href="?vp=servicos" class="btn btn-secondary">
             Voltar
         </a>
     </form>
 </div>
 
-<?php include_once '../layouts/footer.php'; ?>
+<?php include_once 'views/layouts/footer.php'; ?>

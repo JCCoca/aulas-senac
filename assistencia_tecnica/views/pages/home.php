@@ -1,5 +1,3 @@
-<?php include '../layouts/header.php'; ?>
+<?php include 'views/layouts/header.php'; ?>
 
-
-
-<?php include '../layouts/footer.php'; ?>
+<?php include 'views/layouts/footer.php'; ?>

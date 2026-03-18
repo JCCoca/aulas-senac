@@ -1,26 +1,24 @@
-<?php 
-
-    require_once '../../connection/database.php';
+<?php
 
     $query = $connection->query('SELECT * FROM tb_ordens_servico');
     $servicos = $query->fetchAll();
 
 ?>
 
-<?php include_once '../layouts/header.php'; ?>
+<?php include_once 'views/layouts/header.php'; ?>
 
 <div class="row mb-4">
     <div class="col-md-6">
         <h3 class="mb-0">Serviços</h3>
     </div>
     <div class="col-md-6 text-end">
-        <a href="cadastrar_servico.php" class="btn btn-primary">
+        <a href="?vp=cadastrar_servico" class="btn btn-primary">
             Adicionar
         </a>
     </div>
 </div>
 
-<?php include_once '../components/alerts.php' ?>
+<?php include_once 'views/components/alerts.php' ?>
 
 <div class="table-responsive">
     <table class="table table-sm table-striped table-hover align-middle">
@@ -42,10 +40,10 @@
                     <td><?= 'R$ '.number_format($servico->valor_estimado, 2, ',', '.') ?></td>
                     <td>
                         <div class="d-flex">
-                            <a href="editar_servico.php?id=<?= $servico->id ?>" class="btn btn-sm btn-outline-primary me-2">
+                            <a href="?vp=editar_servico&id=<?= $servico->id ?>" class="btn btn-sm btn-outline-primary me-2">
                                 Editar
                             </a>
-                            <a href="../../actions/excluir_servico.php?id=<?= $servico->id ?>" class="btn btn-sm btn-outline-danger">
+                            <a href="?ac=excluir_servico&id=<?= $servico->id ?>" class="btn btn-sm btn-outline-danger">
                                 Excluir
                             </a>
                         </div>
@@ -56,4 +54,4 @@
     </table>
 </div>
 
-<?php include_once '../layouts/footer.php'; ?>
+<?php include_once 'views/layouts/footer.php'; ?>

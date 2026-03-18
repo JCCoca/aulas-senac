@@ -1,8 +1,6 @@
 <?php 
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    require_once '../connection/database.php';
-
     $cliente = $_POST['cliente'];
     $aparelho = $_POST['aparelho'];
     $problema = $_POST['problema'];
@@ -31,11 +29,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $status = $update->execute();
 
         if ($update->rowCount() == 1 or $st) {
-            header('Location: ../views/pages/editar_servico.php?id='.$id.'&success='.urlencode('Dados Atualizados com sucesso!'));
+            header('Location: ?vp=editar_servico&id='.$id.'&success='.urlencode('Dados Atualizados com sucesso!'));
         } else {
-            header('Location: ../views/pages/editar_servico.php?id='.$id.'&error='.urlencode('Ocorreu um erro ao tentar atualizar os dados!'));
+            header('Location: ?vp=editar_servico&id='.$id.'&error='.urlencode('Ocorreu um erro ao tentar atualizar os dados!'));
         }
     } else {
-        header('Location: ../views/pages/editar_servico.php?id='.$id.'&error='.urlencode('Preencha todos os dados!'));
+        header('Location: ?vp=editar_servico&id='.$id.'&error='.urlencode('Preencha todos os dados!'));
     }
 }
