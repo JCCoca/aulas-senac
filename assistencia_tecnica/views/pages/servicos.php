@@ -35,17 +35,17 @@
         </thead>
         <tbody>
             <?php foreach ($servicos as $servico): ?>
-                <tr class="<?= $servico->valor_estimado >= 500 ? 'table-warning' : '' ?>">
+                <tr class="<?= $servico->valor_estimado > 500 ? 'table-warning' : '' ?>">
                     <td><?= $servico->cliente ?></td>
                     <td><?= $servico->aparelho ?></td>
                     <td><?= $servico->problema ?></td>
                     <td><?= 'R$ '.number_format($servico->valor_estimado, 2, ',', '.') ?></td>
                     <td>
-                        <div class="d-inline">
-                            <a href="update.php?id=<?= $servico->id ?>" class="btn btn-sm btn-outline-primary me-2">
+                        <div class="d-flex">
+                            <a href="editar_servico.php?id=<?= $servico->id ?>" class="btn btn-sm btn-outline-primary me-2">
                                 Editar
                             </a>
-                            <a href="delete.php?id=<?= $servico->id ?>" class="btn btn-sm btn-outline-danger">
+                            <a href="../../actions/excluir_servico.php?id=<?= $servico->id ?>" class="btn btn-sm btn-outline-danger">
                                 Excluir
                             </a>
                         </div>
