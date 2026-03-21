@@ -1,3 +1,11 @@
+<?php
+
+if (isset($_SESSION['usuario'])) {
+    header('Location: ?vp=home');
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -14,8 +22,10 @@
             <div class="col-lg-5 col-md-6 mx-auto">
                 <h3 class="text-center mb-4">Login</h3>
 
+                <?php include 'views/components/alerts.php'; ?>
+
                 <div class="card card-body">
-                    <form action="" method="POST">
+                    <form action="?ac=autenticar" method="POST">
                         <div class="mb-3">
                             <label for="email" class="form-label">E-mail</label>
                             <input type="email" name="email" id="email" class="form-control" required>  

@@ -21,6 +21,9 @@
                     <a class="nav-link" href="?vp=servicos">Serviços</a>
                 </div>
             </div>
+            <div class="navbar-nav ms-auto">
+                <a class="nav-link" href="?ac=deslogar">Sair</a>
+            </div>
         </div>
     </nav>
 
